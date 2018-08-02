@@ -1201,7 +1201,7 @@ begin
     end;
     if (FHint <> '') and (FShowHint) then
     begin
-      StrLCopy(IconData.szTip, PChar(String(FHint)), SizeOf(IconData.szTip)-1);
+      StrPLCopy(IconData.szTip, PChar(FHint), SizeOf(IconData.szTip)-1);
       { StrLCopy must be used since szTip is only 128 bytes. }
       { From IE ver. 5 szTip is 128 chars, before that only 64 chars. I suppose
         I could use GetComCtlVersion to check the version and then truncate
@@ -1277,8 +1277,8 @@ begin
   with IconData do
   begin
     uFlags := uFlags or NIF_INFO;
-    StrLCopy(szInfo, PChar(Text), SizeOf(szInfo)-1);
-    StrLCopy(szInfoTitle, PChar(Title), SizeOf(szInfoTitle)-1);
+    StrPLCopy(szInfo, PChar(Text), SizeOf(szInfo)-1);
+    StrPLCopy(szInfoTitle, PChar(Title), SizeOf(szInfoTitle)-1);
     TimeoutOrVersion.uTimeout := TimeoutSecs * 1000;
     dwInfoFlags := aBalloonIconTypes[IconType];
   end;
@@ -1305,7 +1305,7 @@ begin
     uFlags := uFlags or NIF_INFO;
     FillChar(szInfo, 0, SizeOf(szInfo));
     for I := 0 to SizeOf(szInfo)-1 do
-      szInfo[I] := Char(Text[I]);
+      szInfo[I] := AnsiChar(Text[I]);
     szInfo[0] := #1;
     FillChar(szInfoTitle, 0, SizeOf(szInfoTitle));
     for I := 0 to SizeOf(szInfoTitle)-1 do
