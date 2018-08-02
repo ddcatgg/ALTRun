@@ -1,0 +1,9 @@
+第一步：将 当前的source目录->添加到tools-option-delphi option-library的路径中；
+
+
+第二步：打开 Raize_DX10_1_Berlin.groupproj（如果是10.0，打开Raize_DX10_Seattle.groupproj，下面的文件版本为230）
+
+ RaizeComponentsVCL240.dproj          编译（compile）
+ RaizeComponentsVCLDB240.dproj         编译（compile）
+ RaizeComponentsVCL_Design240.dproj    安装 (install)
+ RaizeComponentsVCLDB_Design240.dproj  安装 (install)
