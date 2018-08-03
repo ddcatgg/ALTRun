@@ -344,7 +344,7 @@ begin
     TraceMsg('ShellExecute(%s, %s, %s) Failed',
       [StrPas(PCommandStr), StrPas(PParamStr), StrPas(PWorkingDir)]);
 
-    ret := WinExec(PCommandStr, ShowCmd);
+    ret := WinExec(PAnsiChar(PCommandStr), ShowCmd);
     if ret < 33 then
     begin
       TraceMsg('WinExec(%s) Failed', [StrPas(PCommandStr)]);

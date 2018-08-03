@@ -27,31 +27,17 @@ object ParamForm: TParamForm
   object cbbParam: TComboBoxEx
     Left = 0
     Top = 0
-    Width = 344
+    Width = 394
     Height = 22
     Align = alClient
     AutoCompleteOptions = [acoAutoSuggest, acoAutoAppend]
     ItemsEx = <>
     Ctl3D = False
-    ItemHeight = 16
     ParentCtl3D = False
     TabOrder = 0
     OnChange = cbbParamChange
     OnKeyPress = cbbParamKeyPress
     OnKeyUp = cbbParamKeyUp
-  end
-  object btnOK: TRzButton
-    Left = 344
-    Top = 0
-    Width = 50
-    Height = 22
-    Default = True
-    ModalResult = 1
-    Align = alRight
-    Caption = 'btnOK'
-    HotTrack = True
-    TabOrder = 1
-    OnClick = btnOKClick
   end
   object tmrHide: TTimer
     Enabled = False

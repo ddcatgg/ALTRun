@@ -27,8 +27,6 @@ object ConfigForm: TConfigForm
     Anchors = [akRight, akBottom]
     Caption = 'OK'
     Default = True
-    ModalResult = 1
-    TabOrder = 0
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -46,7 +44,9 @@ object ConfigForm: TConfigForm
       3338F38F000033333333333333A223333333333333338F830000333333333333
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
+    ModalResult = 1
     NumGlyphs = 2
+    TabOrder = 0
   end
   object btnCancel: TBitBtn
     Left = 471
@@ -54,8 +54,9 @@ object ConfigForm: TConfigForm
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
-    TabOrder = 1
     Kind = bkCancel
+    NumGlyphs = 2
+    TabOrder = 1
   end
   object pgcConfig: TPageControl
     Left = 6
@@ -67,6 +68,10 @@ object ConfigForm: TConfigForm
     TabOrder = 2
     object tsConfig: TTabSheet
       Caption = '&Config'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object spl1: TSplitter
         Left = 0
         Top = 209
@@ -99,7 +104,7 @@ object ConfigForm: TConfigForm
         Left = 0
         Top = 214
         Width = 532
-        Height = 79
+        Height = 78
         Align = alClient
         Ctl3D = False
         Font.Charset = ANSI_CHARSET
@@ -112,17 +117,22 @@ object ConfigForm: TConfigForm
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 1
+        ExplicitHeight = 79
       end
     end
     object tsHotKey: TTabSheet
       Caption = '&HotKey'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         532
-        293)
+        292)
       object lblPlus: TLabel
         Left = 239
-        Top = 52
+        Top = 51
         Width = 7
         Height = 28
         Anchors = [akLeft, akBottom]
@@ -134,10 +144,11 @@ object ConfigForm: TConfigForm
         Font.Name = #23435#20307
         Font.Style = []
         ParentFont = False
+        ExplicitTop = 52
       end
       object lbl1: TLabel
         Left = 239
-        Top = 139
+        Top = 138
         Width = 7
         Height = 28
         Anchors = [akLeft, akBottom]
@@ -149,6 +160,7 @@ object ConfigForm: TConfigForm
         Font.Name = #23435#20307
         Font.Style = []
         ParentFont = False
+        ExplicitTop = 139
       end
       object lblHotkeyHint: TLabel
         Left = 8
@@ -165,11 +177,12 @@ object ConfigForm: TConfigForm
       end
       object grpKeys1: TGroupBox
         Left = 252
-        Top = 32
+        Top = 31
         Width = 167
         Height = 56
         Anchors = [akLeft, akBottom]
         TabOrder = 0
+        ExplicitTop = 32
         object chkWindows1: TCheckBox
           Left = 8
           Top = 13
@@ -205,7 +218,7 @@ object ConfigForm: TConfigForm
       end
       object lbledtHotKey1: TLabeledEdit
         Left = 130
-        Top = 52
+        Top = 51
         Width = 103
         Height = 19
         Hint = 'Type keyboard to select one key'
@@ -221,10 +234,11 @@ object ConfigForm: TConfigForm
         ShowHint = True
         TabOrder = 1
         OnKeyDown = lbledtHotKey1KeyDown
+        ExplicitTop = 52
       end
       object lbledtHotKey2: TLabeledEdit
         Left = 130
-        Top = 139
+        Top = 138
         Width = 103
         Height = 19
         Hint = 'Type keyboard to select one key'
@@ -240,14 +254,16 @@ object ConfigForm: TConfigForm
         ShowHint = True
         TabOrder = 2
         OnKeyDown = lbledtHotKey2KeyDown
+        ExplicitTop = 139
       end
       object grpKeys2: TGroupBox
         Left = 252
-        Top = 119
+        Top = 118
         Width = 167
         Height = 55
         Anchors = [akLeft, akBottom]
         TabOrder = 3
+        ExplicitTop = 119
         object chkWindows2: TCheckBox
           Left = 8
           Top = 12
@@ -285,9 +301,13 @@ object ConfigForm: TConfigForm
     object tsFont: TTabSheet
       Caption = '&Font'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         532
-        293)
+        292)
       object lblTitleFont: TLabel
         Left = 8
         Top = 20
@@ -429,7 +449,6 @@ object ConfigForm: TConfigForm
         Style = csDropDownList
         Anchors = [akLeft, akTop, akRight]
         Ctl3D = False
-        ItemHeight = 13
         ParentCtl3D = False
         TabOrder = 4
         OnChange = cbbListFormatChange
@@ -438,6 +457,10 @@ object ConfigForm: TConfigForm
     object tsStyle: TTabSheet
       Caption = 'Style'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnlDemo: TPanel
         Left = 50
         Top = 24
@@ -3083,7 +3106,6 @@ object ConfigForm: TConfigForm
           Font.Name = #23435#20307
           Font.Style = []
           ImeMode = imClose
-          ItemHeight = 16
           ParentCtl3D = False
           ParentFont = False
           ParentShowHint = False
@@ -3171,9 +3193,10 @@ object ConfigForm: TConfigForm
     object tsForm: TTabSheet
       Caption = 'F&orm'
       ImageIndex = 3
-      DesignSize = (
-        532
-        293)
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object lblFormAlphaColor: TLabel
         Left = 8
         Top = 20
@@ -3229,63 +3252,22 @@ object ConfigForm: TConfigForm
         Width = 145
         Height = 22
         Ctl3D = False
-        ItemHeight = 16
         ParentCtl3D = False
         ParentShowHint = False
         ShowHint = False
         TabOrder = 0
       end
-      object edtClientDBFileBGFileName: TFilenameEdit
-        Left = 158
-        Top = 176
-        Width = 205
-        Height = 19
-        Ctl3D = False
-        Anchors = [akLeft, akTop, akRight]
-        NumGlyphs = 1
-        ParentCtl3D = False
-        TabOrder = 1
-        Text = 'edtClientDBFileBGFileName'
-        Visible = False
-      end
-      object seAlpha: TRxSpinEdit
-        Left = 158
-        Top = 45
-        Width = 145
-        Height = 21
-        Decimal = 0
-        MaxValue = 255.000000000000000000
-        TabOrder = 2
-      end
-      object seRoundBorderRadius: TRxSpinEdit
-        Left = 158
-        Top = 72
-        Width = 145
-        Height = 21
-        Decimal = 0
-        MaxValue = 200.000000000000000000
-        TabOrder = 3
-        OnKeyDown = seRoundBorderRadiusKeyDown
-      end
-      object seFormWidth: TRxSpinEdit
-        Left = 158
-        Top = 99
-        Width = 145
-        Height = 21
-        Decimal = 0
-        MaxValue = 800.000000000000000000
-        MinValue = 200.000000000000000000
-        Value = 400.000000000000000000
-        TabOrder = 4
-        OnKeyDown = seFormWidthKeyDown
-      end
     end
     object tsLang: TTabSheet
       Caption = 'Language'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         532
-        293)
+        292)
       object lblLanguage: TLabel
         Left = 8
         Top = 23
@@ -3314,7 +3296,6 @@ object ConfigForm: TConfigForm
         Style = csDropDownList
         Anchors = [akLeft, akTop, akRight]
         Ctl3D = False
-        ItemHeight = 13
         ParentCtl3D = False
         TabOrder = 0
         OnChange = cbbListFormatChange
@@ -3328,8 +3309,6 @@ object ConfigForm: TConfigForm
     Height = 25
     Anchors = [akLeft, akBottom]
     Caption = '&Reset'
-    TabOrder = 3
-    OnClick = btnResetClick
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -3348,6 +3327,8 @@ object ConfigForm: TConfigForm
       3333333333338888883333330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
+    TabOrder = 3
+    OnClick = btnResetClick
   end
   object dlgFont: TFontDialog
     Font.Charset = DEFAULT_CHARSET

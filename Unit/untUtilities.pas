@@ -727,7 +727,7 @@ begin
               NumTimes := StrToInt(Copy(KeyString, Succ(PosSpace), Length(KeyString) - PosSpace));
               KeyString := Copy(KeyString, 1, Pred(PosSpace));
             end;
-            if (Length(KeyString) = 1) then MKey := vkKeyScan(KeyString[1])
+            if (Length(KeyString) = 1) then MKey := vkKeyScan(Char(KeyString[1]))
             else MKey := StringToVKey(KeyString);
             if (MKey <> INVALIDKEY) then
             begin
@@ -1063,7 +1063,7 @@ var
 begin
   Len := Length(Str) + 1;
   SetLength(Result, Len);
-  Len := MultiByteToWideChar(CodePage, 0, PChar(Str), -1, PWideChar(Result), Len);
+  Len := MultiByteToWideChar(CodePage, 0, PAnsiChar(Str), -1, PWideChar(Result), Len);
   SetLength(Result, Len - 1);                          //end is #0
 end;
 
@@ -1073,7 +1073,7 @@ var
 begin
   Len := Length(Str) * 2 + 1;                          //one for #0
   SetLength(Result, Len);
-  Len := WideCharToMultiByte(CodePage, 0, PWideChar(Str), -1, PChar(Result), Len, nil, nil);
+  Len := WideCharToMultiByte(CodePage, 0, PWideChar(Str), -1, PAnsiChar(Result), Len, nil, nil);
   SetLength(Result, Len - 1);
 end;
 
@@ -1105,7 +1105,7 @@ begin
   SetLength(Temp, Length(WS) * 3);
 
   // SetLength includes space for null terminator
-  L := UnicodeToUtf8(PChar(Temp), Length(Temp) + 1, PWideChar(WS), Length(WS));
+  L := UnicodeToUtf8(PAnsiChar(Temp), Length(Temp) + 1, PWideChar(WS), Length(WS));
   if L > 0 then
     SetLength(Temp, L - 1)
   else

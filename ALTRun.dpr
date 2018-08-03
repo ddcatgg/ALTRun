@@ -1,8 +1,6 @@
 program ALTRun;
 
 uses
-  //CnMemProf,
-  ExceptionLog,
   Forms,
   SysUtils,
   pngimage in '3rdUnit\pngimage\pngimage.pas',
