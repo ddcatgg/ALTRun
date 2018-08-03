@@ -68,10 +68,6 @@ object ConfigForm: TConfigForm
     TabOrder = 2
     object tsConfig: TTabSheet
       Caption = '&Config'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object spl1: TSplitter
         Left = 0
         Top = 209
@@ -117,16 +113,11 @@ object ConfigForm: TConfigForm
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 1
-        ExplicitHeight = 79
       end
     end
     object tsHotKey: TTabSheet
       Caption = '&HotKey'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         532
         292)
@@ -301,10 +292,6 @@ object ConfigForm: TConfigForm
     object tsFont: TTabSheet
       Caption = '&Font'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         532
         292)
@@ -457,10 +444,6 @@ object ConfigForm: TConfigForm
     object tsStyle: TTabSheet
       Caption = 'Style'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnlDemo: TPanel
         Left = 50
         Top = 24
@@ -3261,10 +3244,6 @@ object ConfigForm: TConfigForm
     object tsLang: TTabSheet
       Caption = 'Language'
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         532
         292)

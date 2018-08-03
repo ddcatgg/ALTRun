@@ -24,7 +24,7 @@ uses
   RXSpin,
   untShortCutMan,
   untALTRunOption,
-  untUtilities, jpeg, ActnList, Menus;
+  untUtilities, jpeg, ActnList, Menus, System.Actions;
 
 type
   TConfigForm = class(TForm)
@@ -73,8 +73,9 @@ type
     lblLanguage: TLabel;
     cbbLang: TComboBox;
     lblLanguageHint: TLabel;
-    seAlpha: TRxSpinEdit;
-    seRoundBorderRadius: TRxSpinEdit;
+//  seAlpha: TRxSpinEdit;
+//  seRoundBorderRadius: TRxSpinEdit;
+//  seFormWidth: TRxSpinEdit;
     lblRoundBorderRadius: TLabel;
     lbledtHotKey2: TLabeledEdit;
     grpKeys2: TGroupBox;
@@ -84,7 +85,6 @@ type
     chkShift2: TCheckBox;
     lbl1: TLabel;
     lblHotkeyHint: TLabel;
-    seFormWidth: TRxSpinEdit;
     lblFormWidth: TLabel;
     tsStyle: TTabSheet;
     dlgColor: TColorDialog;

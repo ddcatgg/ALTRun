@@ -28,7 +28,7 @@ uses
   untShortCutMan,
   untClipboard,
   untALTRunOption,
-  untUtilities, jpeg;
+  untUtilities, jpeg, System.ImageList, System.Actions;
 
 type
   TALTRunForm = class(TForm)
@@ -331,9 +331,9 @@ begin
       cbbListFormatChange(Sender);
 
       lstAlphaColor.Selected := AlphaColor;
-      seAlpha.Value := Alpha;
-      seRoundBorderRadius.Value := RoundBorderRadius;
-      seFormWidth.Value := FormWidth;
+//    seAlpha.Value := Alpha;
+//    seRoundBorderRadius.Value := RoundBorderRadius;
+//    seFormWidth.Value := FormWidth;
 
       //”Ô—‘
       try
@@ -401,14 +401,14 @@ begin
             if not IsNeedRestart then IsNeedRestart := (AlphaColor <> lstAlphaColor.Selected);
             AlphaColor := lstAlphaColor.Selected;
 
-            if not IsNeedRestart then IsNeedRestart := (Alpha <> seAlpha.Value);
-            Alpha := Round(seAlpha.Value);
+//          if not IsNeedRestart then IsNeedRestart := (Alpha <> seAlpha.Value);
+//          Alpha := Round(seAlpha.Value);
 
-            if not IsNeedRestart then IsNeedRestart := (RoundBorderRadius <> seRoundBorderRadius.Value);
-            RoundBorderRadius := Round(seRoundBorderRadius.Value);
-
-            if not IsNeedRestart then IsNeedRestart := (FormWidth <> seFormWidth.Value);
-            FormWidth := Round(seFormWidth.Value);
+//          if not IsNeedRestart then IsNeedRestart := (RoundBorderRadius <> seRoundBorderRadius.Value);
+//          RoundBorderRadius := Round(seRoundBorderRadius.Value);
+//
+//          if not IsNeedRestart then IsNeedRestart := (FormWidth <> seFormWidth.Value);
+//          FormWidth := Round(seFormWidth.Value);
 
             if not IsNeedRestart then IsNeedRestart := (Lang <> cbbLang.Text);
             Lang := cbbLang.Text;
