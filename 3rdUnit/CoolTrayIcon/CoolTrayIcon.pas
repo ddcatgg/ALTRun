@@ -1309,7 +1309,7 @@ begin
     szInfo[0] := #1;
     FillChar(szInfoTitle, 0, SizeOf(szInfoTitle));
     for I := 0 to SizeOf(szInfoTitle)-1 do
-      szInfoTitle[I] := Char(Title[I]);
+      szInfoTitle[I] := AnsiChar(Title[I]);
     szInfoTitle[0] := #1;
     TimeoutOrVersion.uTimeout := TimeoutSecs * 1000;
     dwInfoFlags := aBalloonIconTypes[IconType];
