@@ -1,5 +1,7 @@
 program ALTRun;
 
+{$R *.dres}
+
 uses
   Forms,
   SysUtils,
