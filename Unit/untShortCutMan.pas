@@ -156,6 +156,47 @@ implementation
 uses
   frmShortCut;
 
+procedure ParseCmdLine(CmdLine: string; var ProgStr, ParamStr: string);
+var
+  i, State: Integer;
+  A: Char;
+begin
+  State := 0;
+  CmdLine := Trim(CmdLine);
+  ProgStr := '';
+  ParamStr := '';
+  for i := 1 to Length(CmdLine) do
+  begin
+    A := CmdLine[i];
+    case State of
+      0: // 带或不带引号的程序路径
+        begin
+          if (i = 1) and (A = '"') then
+            State := 1
+          else if A = ' ' then
+            State := 2
+          else
+            ProgStr := ProgStr + A;
+        end;
+
+      1: // 带引号的程序路径
+        begin
+          if A = '"' then
+            State := 2
+          else
+            ProgStr := ProgStr + A;
+        end;
+
+      2: // 程序参数
+        ParamStr := ParamStr + A;
+
+    end;
+
+  end;
+
+  ParamStr := Trim(ParamStr);
+end;
+
 function ExecuteCmd(cmd: Pointer): LongInt; stdcall;
 var
   PCommandStr, PParamStr, PWorkingDir: PChar;
@@ -164,6 +205,7 @@ var
   strCommand, strTemp: string;
   ret: Integer;
   ShowCmd: Integer;
+  ProgStr, ParamStr: string;
 begin
   cmdobj := TCmdObject(cmd);
 
@@ -191,8 +233,9 @@ begin
   case cmdobj.ParamType of
     ptNone:
       begin
-        PCommandStr := PChar(cmdobj.Command);
-        PParamStr := nil;
+        ParseCmdLine(cmdobj.Command, ProgStr, ParamStr);
+        PCommandStr := PChar(ProgStr);
+        PParamStr := PChar(ParamStr);
         PWorkingDir := PChar(cmdobj.WorkingDir);
       end;
 

@@ -125,6 +125,7 @@
         <AppEnableHighDPI>true</AppEnableHighDPI>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <Icon_MainIcon>ALTRun_Icon.ico</Icon_MainIcon>
+        <DCC_Define>EUREKALOG_VER7;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
@@ -682,6 +683,9 @@
 EurekaLog Version=7007
 Activate=1
 Append to Log=0
+atFixSafeCallException=1
+atVCL=1
+atWin32=1
 AutoCrashOperation=2
 boHandleSafeCallExceptions=1
 boPauseBorlandThreads=0
@@ -878,8 +882,12 @@ idEurekaLog=1
 idEurekaLogDetailed=1
 idMSClassic=1
 idStepsToReproduce=1
+InjectCode=1
+InjectInfo=1
+InjectOptions=1
 loAppendReproduceText=0
 loCatchLeaks=0
+loEnableMMDebugMode=1
 loFreeAllLeaks=1
 loHideBorlandLeaks=1
 loSaveModulesAndProcessesSections=1

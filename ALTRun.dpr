@@ -3,6 +3,16 @@ program ALTRun;
 {$R *.dres}
 
 uses
+  EMemLeaks,
+  EResLeaks,
+  EDialogWinAPIMSClassic,
+  EDialogWinAPIEurekaLogDetailed,
+  EDialogWinAPIStepsToReproduce,
+  EDebugExports,
+  EFixSafeCallException,
+  EMapWin32,
+  EAppVCL,
+  ExceptionLog7,
   Forms,
   SysUtils,
   pngimage in '3rdUnit\pngimage\pngimage.pas',
