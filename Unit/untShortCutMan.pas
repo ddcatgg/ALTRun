@@ -153,6 +153,7 @@ var
   ShortCutMan: TShortCutMan;
 
 implementation
+
 uses
   frmShortCut;
 
@@ -163,6 +164,17 @@ var
 begin
   State := 0;
   CmdLine := Trim(CmdLine);
+  // 兼容带空格的路径，但没有用双引号引起来的情况。
+  if Copy(CmdLine, 1) <> '"' then
+  begin
+    if FileExists(CmdLine) then
+    begin
+      ProgStr := CmdLine;
+      ParamStr := '';
+      Exit;
+    end;
+  end;
+
   ProgStr := '';
   ParamStr := '';
   for i := 1 to Length(CmdLine) do
