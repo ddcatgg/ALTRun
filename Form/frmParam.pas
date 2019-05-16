@@ -29,7 +29,7 @@ type
   TParamForm = class(TForm)
     tmrHide: TTimer;
     cbbParam: TComboBoxEx;
-    btnOK: TRzButton;
+    btnOK: TSpeedButton;
 
     procedure btnOKClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -131,7 +131,7 @@ var
   strLeft, strRight, str: WideString;                  //不设成WideString就有Bug
 begin
   //如果回车，就等于按下确定
-  if Key = #13 then btnOKClick(Sender);
+  //if Key = #13 then btnOKClick(Sender);
 
   //  if Key = #8 then
   //  begin
@@ -163,7 +163,7 @@ procedure TParamForm.cbbParamKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   //如果回车，就等于按下确定
-  //if Key = 13 then btnOKClick(Sender);
+  if Key = 13 then btnOKClick(Sender);
 end;
 
 procedure TParamForm.Createparams(var params: TCreateParams);

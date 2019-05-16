@@ -3,8 +3,8 @@ object ParamForm: TParamForm
   Top = 0
   BorderStyle = bsDialog
   Caption = 'ng'
-  ClientHeight = 22
-  ClientWidth = 394
+  ClientHeight = 21
+  ClientWidth = 425
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -24,10 +24,21 @@ object ParamForm: TParamForm
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object btnOK: TSpeedButton
+    Left = 390
+    Top = 0
+    Width = 35
+    Height = 21
+    Align = alRight
+    Caption = 'OK'
+    Flat = True
+    Visible = False
+    OnClick = btnOKClick
+  end
   object cbbParam: TComboBoxEx
     Left = 0
     Top = 0
-    Width = 394
+    Width = 390
     Height = 22
     Align = alClient
     AutoCompleteOptions = [acoAutoSuggest, acoAutoAppend]
@@ -38,6 +49,7 @@ object ParamForm: TParamForm
     OnChange = cbbParamChange
     OnKeyPress = cbbParamKeyPress
     OnKeyUp = cbbParamKeyUp
+    ExplicitWidth = 326
   end
   object tmrHide: TTimer
     Enabled = False
